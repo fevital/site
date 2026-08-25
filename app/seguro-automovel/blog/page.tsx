@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import BlogCTA from "../components/BlogCTA";
-import { articles } from "../lib/articles";
-import { canonicalBase } from "../lib/site";
+import BlogCTA from "../../components/BlogCTA";
+import { articles } from "../../lib/articles";
+import { canonicalBase } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Blog de Seguro Auto no Sul de Minas",
@@ -23,12 +23,6 @@ export default function BlogPage() {
   return (
     <main className="blog-site">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <header className="blog-header">
-        <div className="blog-shell blog-nav">
-          <Link href="/">Vital Corretora</Link>
-          <Link href="/">Seguro Auto</Link>
-        </div>
-      </header>
       <section className="blog-hero">
         <div className="blog-shell">
           <span>CONTEÚDO ESPECIALIZADO</span>
@@ -44,13 +38,12 @@ export default function BlogPage() {
         {articles.map((article) => (
           <article className="article-card" key={article.slug}>
             <span>{article.category}{article.city ? ` · ${article.city}` : ""}</span>
-            <h2><Link href={`/blog/${article.slug}/`}>{article.title}</Link></h2>
+            <h2><Link href={`/seguro-automovel/blog/${article.slug}/`}>{article.title}</Link></h2>
             <p>{article.description}</p>
-            <Link className="read-more" href={`/blog/${article.slug}/`}>Ler matéria →</Link>
+            <Link className="read-more" href={`/seguro-automovel/blog/${article.slug}/`}>Ler matéria →</Link>
           </article>
         ))}
       </section>
-      <footer className="blog-footer"><div className="blog-shell">VITAL CORRETORA DE SEGUROS CONSÓRCIOS E PLANOS DE SAÚDE · SUSEP 261180251 · Monsenhor Paulo, MG</div></footer>
     </main>
   );
 }
