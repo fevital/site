@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 import LegalPage from "../components/LegalPage";
 
-export const metadata: Metadata = { title: "Termos de Uso | Vital Corretora" };
+export const metadata: Metadata = { title: "Termos de Uso | Vital Corretora de Seguros" };
 
-export default function TermsOfUse() {
-  return (
-    <LegalPage title="Termos de Uso">
-      <section><h2>1. Aceitação</h2><p>Ao acessar esta página, você declara que leu e concorda com estes Termos de Uso. Caso não concorde, interrompa a utilização do site.</p></section>
-      <section><h2>2. Finalidade do site</h2><p>O site apresenta informações gerais sobre seguro automóvel e facilita o contato com a Vital Corretora de Seguros Ltda. O conteúdo não constitui proposta, apólice, garantia de contratação ou recomendação definitiva.</p></section>
-      <section><h2>3. Cotações e contratação</h2><p>Cotações dependem das informações fornecidas pelo interessado, das regras de aceitação e das condições vigentes de cada seguradora. Preços, coberturas, franquias e demais condições somente serão válidos quando formalizados na proposta ou apólice correspondente.</p></section>
-      <section><h2>4. Responsabilidades do usuário</h2><p>Você se compromete a fornecer informações verdadeiras, completas e atualizadas, utilizar o site de forma lícita e não tentar interferir em sua segurança ou funcionamento.</p></section>
-      <section><h2>5. Conteúdo e disponibilidade</h2><p>Buscamos manter as informações corretas e o serviço disponível, mas não garantimos funcionamento ininterrupto ou ausência absoluta de erros. O conteúdo pode ser atualizado a qualquer momento para refletir alterações operacionais, comerciais ou legais.</p></section>
-      <section><h2>6. Propriedade intelectual</h2><p>Marcas, textos, identidade visual, imagens e demais conteúdos próprios são protegidos pela legislação aplicável. O uso ou reprodução sem autorização, fora das hipóteses permitidas por lei, é proibido. Marcas de seguradoras pertencem aos respectivos titulares.</p></section>
-      <section><h2>7. Links e serviços externos</h2><p>O site pode encaminhar o usuário a serviços de terceiros, como o WhatsApp. Esses serviços possuem termos e políticas próprios, e a Vital não controla sua disponibilidade ou suas práticas.</p></section>
-      <section><h2>8. Privacidade</h2><p>O tratamento de dados pessoais relacionado ao site é descrito na Política de Privacidade, que integra estes termos.</p></section>
-      <section><h2>9. Legislação aplicável</h2><p>Estes termos são regidos pela legislação brasileira. Eventuais controvérsias serão tratadas no foro competente, observadas as regras legais de proteção ao consumidor.</p></section>
-      <section><h2>10. Contato</h2><p>Em caso de dúvida sobre estes termos, entre em contato pelos canais de atendimento apresentados na página de Seguro Automóvel.</p></section>
-    </LegalPage>
-  );
+const sections = [
+  { title: "Aceitação dos Termos", paragraphs: ["Estes Termos regulam o acesso ao site, aos canais de atendimento e aos serviços prestados pela Vital Corretora de Seguros Ltda., CNPJ 66.767.206/0001-50.", "Ao utilizar nossos canais, solicitar cotações ou contratar seguros por nosso intermédio, você declara que leu e aceitou estas condições. Menores de 18 anos devem estar assistidos por responsável legal."] },
+  { title: "Sobre a Vital Corretora", paragraphs: ["A Vital é uma corretora de seguros regularmente constituída. Atuamos como intermediários entre clientes e seguradoras, com assessoria técnica, comercial e de pós-venda.", "Não somos uma seguradora e não assumimos o risco coberto pelas apólices; a aceitação do risco e a indenização são responsabilidades da seguradora emitente."] },
+  { title: "Serviços oferecidos", paragraphs: ["Oferecemos cotação e comparação, intermediação de seguros, apoio em renovações e endossos, acompanhamento de sinistros, atendimento e envio de avisos relacionados às apólices.", "Produtos, coberturas e condições dependem da análise e aceitação de cada seguradora."] },
+  { title: "Uso do Canal WhatsApp (API Oficial)", paragraphs: ["Utilizamos a API oficial do WhatsApp Business para atendimento e mensagens relacionadas ao serviço. As conversas podem ser armazenadas para histórico e comprovação das tratativas.", "Mensagens de marketing podem ser interrompidas a qualquer momento. Evite enviar dados sensíveis que não tenham sido solicitados por nossa equipe."] },
+  { title: "Responsabilidades do Usuário", paragraphs: ["O usuário deve fornecer informações verdadeiras, completas e atualizadas, preservar seus dados de acesso, comunicar alterações relevantes ao risco e guardar os documentos relacionados à contratação."], bullets: ["Não omitir informações relevantes para a análise do risco;", "Não usar os canais para fraude ou finalidade ilícita;", "Tratar a equipe com respeito e urbanidade."] },
+  { title: "Uso Permitido e Uso Proibido", paragraphs: ["Os canais devem ser usados para conhecer, contratar e acompanhar os serviços da Vital. É proibido tentar acessar áreas restritas, interferir no funcionamento, disseminar código malicioso, copiar conteúdo de forma indevida ou praticar atos ilegais."] },
+  { title: "Propriedade Intelectual", paragraphs: ["Marcas, textos, imagens, elementos gráficos, software e demais conteúdos pertencem à Vital ou a seus licenciadores. O acesso ao site não transfere qualquer direito de propriedade intelectual."] },
+  { title: "Limitação de Responsabilidade", paragraphs: ["A Vital se compromete a atuar com diligência na intermediação e no atendimento, mas não responde por decisões de aceitação, precificação, regulação ou indenização tomadas pelas seguradoras, nem por indisponibilidades de serviços de terceiros."] },
+  { title: "Disponibilidade dos Canais", paragraphs: ["Podemos realizar manutenção, atualização ou interrupção temporária dos canais. Buscaremos restabelecer o serviço com agilidade, sem garantia de funcionamento ininterrupto."] },
+  { title: "Privacidade", paragraphs: ["O tratamento de dados pessoais segue nossa Política de Privacidade, que integra estes Termos e está disponível no link ao início e ao final desta página."] },
+  { title: "Legislação Aplicável e Foro", paragraphs: ["Estes Termos são regidos pelas leis brasileiras. Fica preservado o foro legalmente competente, inclusive o domicílio do consumidor quando aplicável."] },
+  { title: "Alterações destes Termos", paragraphs: ["Podemos atualizar estes Termos para refletir mudanças legais, operacionais ou nos serviços. A versão vigente será publicada nesta página com sua data de atualização."] },
+  { title: "Contato", paragraphs: ["Dúvidas podem ser enviadas para contato@vital.net.br. Site oficial: www.vital.net.br."] },
+];
+
+export default function TermsPage() {
+  return <LegalPage eyebrow="Termos e condições de uso" title="Termos de Uso" intro="Estes Termos estabelecem as condições de uso dos nossos canais de atendimento e dos serviços de corretagem de seguros." counterpartHref="/seguro-automovel/politica-de-privacidade/" counterpartLabel="Ver Política de Privacidade" sections={sections} />;
 }
