@@ -72,7 +72,7 @@ export default function Home(){
     </div></header>
 
     <section className="hero" id="inicio">
-      <picture className="hero-media" aria-hidden="true">
+      <picture className="hero-media">
         <source media="(max-width: 640px)" srcSet={`${asset("/hero-vital-frota-mobile-v33.png")}?v=33`}/>
         <img className="hero-background" src={`${asset("/hero-vital-frota-desktop-v33.png")}?v=33`} alt=""/>
       </picture>
@@ -167,7 +167,7 @@ export default function Home(){
     </div></section>
 
     <section className="final-cta"><div className="shell"><span>Todo cuidado é Vital.</span><h2>Proteja seu veículo sem pagar por aquilo que você não precisa.</h2><p>Compare as melhores condições para o seu perfil em uma cotação gratuita.</p><CTA light>Quero cotar meu seguro</CTA></div></section>
-    <footer><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros Ltda.</span><span>Seguro Auto • Atendimento personalizado</span></div></footer>
+    <footer><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/blog/`}>Blog Seguro Auto</a><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros · SUSEP 261180251</span><span>Monsenhor Paulo, MG • Atendimento no Sul de Minas</span></div></footer>
     <WhatsAppLink className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fazer cotação pelo WhatsApp"><WhatsIcon/></WhatsAppLink>
   </main>
 }
