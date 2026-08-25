@@ -28,8 +28,13 @@
     "app/**/*.tsx",
     "next.config.ts",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "app/**/*.mts"
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "drizzle.config.ts", "vite.config.ts", "chatgpt-auth.ts", "app/chatgpt-auth.ts"]
+  "exclude": [
+    "node_modules",
+    "drizzle.config.ts",
+    "vite.config.ts",
+    "chatgpt-auth.ts",
+    "app/chatgpt-auth.ts"
+  ]
 }

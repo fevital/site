@@ -1,5 +1,6 @@
-const whatsapp = "https://wa.me/553584149766?text=Oi%2C%20quero%20cotar%20um%20seguro%20para%20o%20meu%20autom%C3%B3vel%21";
 const basePath = "/seguro-automovel";
+const asset = (path: string) => `${basePath}${path}`;
+const whatsapp = "https://wa.me/553584149766?text=Oi%2C%20quero%20cotar%20um%20seguro%20para%20o%20meu%20autom%C3%B3vel%21";
 
 const coverages = [
   ["01","Colisão e perda total","Proteção para os danos do seu veículo, de um reparo à indenização integral."],
@@ -10,16 +11,16 @@ const coverages = [
   ["06","Carro reserva","Mobilidade enquanto seu veículo estiver em reparo por um evento coberto."],
 ];
 const insurerLogos = [
-  ["MAPFRE", `${basePath}/insurers/mapfre.png`],
-  ["Suhai Seguradora", `${basePath}/insurers/suhai.png`],
-  ["Yelum Seguradora", `${basePath}/insurers/yelum.png`],
-  ["Porto", `${basePath}/insurers/porto.png`],
-  ["Tokio Marine Seguradora", `${basePath}/insurers/tokio-marine.png`],
-  ["Azul Seguros", `${basePath}/insurers/azul-seguros.png`],
-  ["Allianz", `${basePath}/insurers/allianz.png`],
-  ["HDI Seguros", `${basePath}/insurers/hdi.png`],
-  ["Bradesco Seguros", `${basePath}/insurers/bradesco-seguros.png`],
-  ["Itaú Seguros", `${basePath}/insurers/itau-seguros.png`],
+  ["MAPFRE", asset("/insurers/mapfre.png")],
+  ["Suhai Seguradora", asset("/insurers/suhai.png")],
+  ["Yelum Seguradora", asset("/insurers/yelum.png")],
+  ["Porto", asset("/insurers/porto.png")],
+  ["Tokio Marine Seguradora", asset("/insurers/tokio-marine.png")],
+  ["Azul Seguros", asset("/insurers/azul-seguros.png")],
+  ["Allianz", asset("/insurers/allianz.png")],
+  ["HDI Seguros", asset("/insurers/hdi.png")],
+  ["Bradesco Seguros", asset("/insurers/bradesco-seguros.png")],
+  ["Itaú Seguros", asset("/insurers/itau-seguros.png")],
 ];
 const faqs = [
   ["Por que contratar com a Vital?","Porque cuidamos de toda a jornada. Antes, entendemos seu perfil e comparamos as melhores opções. Durante, explicamos cada escolha com clareza. Depois, continuamos ao seu lado para manter sua proteção funcionando como deve."],
@@ -62,7 +63,7 @@ export default function Home(){
   return <main>
     <header className="site-header"><div className="shell header-inner">
       <a className="brand brand-header" href="#inicio">
-        <img src={`${basePath}/vital-lettering.png`} alt="Vital"/>
+        <img src={asset("/vital-lettering.png")} alt="Vital"/>
         <span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span>
       </a>
       <CTA>Cotar agora</CTA>
@@ -70,8 +71,8 @@ export default function Home(){
 
     <section className="hero" id="inicio">
       <picture className="hero-media" aria-hidden="true">
-        <source media="(max-width: 640px)" srcSet={`${basePath}/hero-vital-frota-mobile-v33.png?v=33`}/>
-        <img className="hero-background" src={`${basePath}/hero-vital-frota-desktop-v33.png?v=33`} alt=""/>
+        <source media="(max-width: 640px)" srcSet={`${asset("/hero-clean-logo-mobile-v32.png")}?v=32`}/>
+        <img className="hero-background" src={`${asset("/hero-clean-logo-desktop-v32.png")}?v=32`} alt=""/>
       </picture>
       <div className="hero-overlay"/>
       <div className="shell hero-inner"><div className="hero-copy">
@@ -91,7 +92,7 @@ export default function Home(){
     </section>
 
     <section className="manifest" id="como-funciona">
-      <img className="manifest-watermark" src={`${basePath}/vital-shield.png`} alt="" aria-hidden="true"/>
+      <img className="manifest-watermark" src={asset("/vital-shield.png")} alt="" aria-hidden="true"/>
       <div className="shell manifest-content">
         <div className="manifest-heading">
           <span>Seguro pensado para você</span>
@@ -127,7 +128,7 @@ export default function Home(){
       <CTA>Quero comparar opções</CTA>
     </div></section>
 
-    <section className="insurers" id="seguradoras"><img className="insurers-shield" src={`${basePath}/vital-shield.png`} alt="" aria-hidden="true"/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, franquia, assistência, rede de atendimento e coberturas para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map(([name,src])=><div className="insurer-logo" key={`${group}-${name}`}><img src={src} alt={group===0?name:""}/></div>)}</div>)}</div></div></section>
+    <section className="insurers" id="seguradoras"><img className="insurers-shield" src={asset("/vital-shield.png")} alt="" aria-hidden="true"/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, franquia, assistência, rede de atendimento e coberturas para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map(([name,src])=><div className="insurer-logo" key={`${group}-${name}`}><img src={src} alt={group===0?name:""}/></div>)}</div>)}</div></div></section>
 
     <section className="method" id="processo"><div className="shell">
       <div className="section-heading centered"><span>Simples do começo ao fim</span><h2>Seu seguro em apenas 3 passos.</h2></div>
@@ -164,7 +165,7 @@ export default function Home(){
     </div></section>
 
     <section className="final-cta"><div className="shell"><span>Todo cuidado é Vital.</span><h2>Proteja seu veículo sem pagar por aquilo que você não precisa.</h2><p>Compare as melhores condições para o seu perfil em uma cotação gratuita.</p><CTA light>Quero cotar meu seguro</CTA></div></section>
-    <footer><div className="shell footer-main"><div className="footer-brand"><img src={`${basePath}/vital-shield.png`} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/politica-de-privacidade/`}>Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros Ltda.</span><span>Seguro Auto • Atendimento personalizado</span></div></footer>
+    <footer><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros Ltda.</span><span>Seguro Auto • Atendimento personalizado</span></div></footer>
     <a className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fazer cotação pelo WhatsApp"><WhatsIcon/></a>
   </main>
 }
