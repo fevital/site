@@ -1,3 +1,5 @@
+import WhatsAppLink from "./components/WhatsAppLink";
+
 const basePath = "/seguro-automovel";
 const asset = (path: string) => `${basePath}${path}`;
 const whatsapp = "https://wa.me/553584149766?text=Oi%2C%20quero%20cotar%20um%20seguro%20para%20o%20meu%20autom%C3%B3vel%21";
@@ -56,7 +58,7 @@ function WhatsIcon(){
   return <svg className="whats-icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3A13 13 0 0 0 4.8 22.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1.1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.6.3-.6c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.4-.3-.7-.4Z"/></svg>;
 }
 function CTA({children="Fazer minha cotação",light=false}:{children?:React.ReactNode;light?:boolean}) {
-  return <a className={light?"cta light":"cta"} href={whatsapp} target="_blank" rel="noreferrer"><WhatsIcon/>{children}</a>;
+  return <WhatsAppLink className={light?"cta light":"cta"} href={whatsapp} target="_blank" rel="noreferrer"><WhatsIcon/>{children}</WhatsAppLink>;
 }
 
 export default function Home(){
@@ -166,6 +168,6 @@ export default function Home(){
 
     <section className="final-cta"><div className="shell"><span>Todo cuidado é Vital.</span><h2>Proteja seu veículo sem pagar por aquilo que você não precisa.</h2><p>Compare as melhores condições para o seu perfil em uma cotação gratuita.</p><CTA light>Quero cotar meu seguro</CTA></div></section>
     <footer><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros Ltda.</span><span>Seguro Auto • Atendimento personalizado</span></div></footer>
-    <a className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fazer cotação pelo WhatsApp"><WhatsIcon/></a>
+    <WhatsAppLink className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fazer cotação pelo WhatsApp"><WhatsIcon/></WhatsAppLink>
   </main>
 }
