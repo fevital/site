@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import WhatsAppLink from "../components/WhatsAppLink";
 
 const asset = (path: string) => path;
@@ -88,7 +89,7 @@ export default function Home(){
     </section>
 
     <section className="manifest" id="como-funciona">
-      <img className="manifest-watermark" src={asset("/vital-shield.png")} alt="" aria-hidden="true"/>
+      <Image className="manifest-watermark" src={asset("/vital-shield.png")} alt="" aria-hidden="true" width={512} height={512}/>
       <div className="shell manifest-content">
         <div className="manifest-heading">
           <span>Seguro pensado para você</span>
@@ -124,7 +125,7 @@ export default function Home(){
       <CTA>Quero comparar opções</CTA>
     </div></section>
 
-    <section className="insurers" id="seguradoras"><img className="insurers-shield" src={asset("/vital-shield.png")} alt="" aria-hidden="true"/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, franquia, assistência, rede de atendimento e coberturas para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map(([name,src])=><div className="insurer-logo" key={`${group}-${name}`}><img src={src} alt={group===0?name:""}/></div>)}</div>)}</div></div></section>
+    <section className="insurers" id="seguradoras"><Image className="insurers-shield" src={asset("/vital-shield.png")} alt="" aria-hidden="true" width={512} height={512}/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, franquia, assistência, rede de atendimento e coberturas para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map(([name,src])=><div className="insurer-logo" key={`${group}-${name}`}><Image src={src} alt={group===0?name:""} width={220} height={90}/></div>)}</div>)}</div></div></section>
 
     <section className="method" id="processo"><div className="shell">
       <div className="section-heading centered"><span>Simples do começo ao fim</span><h2>Seu seguro em apenas 3 passos.</h2></div>

@@ -14,9 +14,9 @@ export default function SiteHeader(){
       <details><summary>Seguros</summary><div>{insurance.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}<Link href="/seguros/">Ver todos os seguros</Link></div></details>
       <details><summary>Planos de Saúde</summary><div><Link href="/planos-de-saude/">Visão geral</Link><Link href="/planos-de-saude/individual-e-familiar/">Individual e Familiar</Link><Link href="/planos-de-saude/empresarial/">Empresarial</Link></div></details>
       <details><summary>Consórcios</summary><div><Link href="/consorcios/">Visão geral</Link><Link href="/consorcios/automoveis/">Automóveis</Link><Link href="/consorcios/imoveis/">Imóveis</Link><Link href="/consorcios/pesados-maquinas-e-equipamentos/">Pesados e Máquinas</Link></div></details>
-      <Link href="/seguro-automovel/blog/">Blog</Link>
+      <details><summary>Blog</summary><div><Link href="/blog/">Todos os conteúdos</Link><Link href="/seguro-automovel/blog/">Seguro Auto</Link><Link href="/blog/seguro-residencial/">Residencial</Link><Link href="/blog/seguro-de-vida/">Vida</Link><Link href="/blog/individual-e-familiar/">Planos de Saúde</Link><Link href="/blog/automoveis/">Consórcios</Link></div></details>
     </nav>
     <WhatsAppLink className="global-header-cta" href={whatsappUrl("Olá! Quero conhecer as opções da Vital.")} target="_blank" rel="noreferrer">Falar com a Vital</WhatsAppLink>
-    <details className="mobile-menu"><summary aria-label="Abrir menu">Menu</summary><nav>{insurance.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}<Link href="/planos-de-saude/individual-e-familiar/">Planos de Saúde</Link><Link href="/consorcios/automoveis/">Consórcios</Link><Link href="/seguro-automovel/blog/">Blog</Link></nav></details>
+    <details className="mobile-menu"><summary aria-label="Abrir menu">Menu</summary><nav>{insurance.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}<Link href="/planos-de-saude/individual-e-familiar/">Planos de Saúde</Link><Link href="/consorcios/automoveis/">Consórcios</Link><Link href="/blog/">Blog: todos os produtos</Link></nav></details>
   </div></header>
 }
