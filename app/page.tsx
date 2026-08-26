@@ -36,7 +36,7 @@ function StandardCTA({children}:{children:React.ReactNode}){return <WhatsAppLink
 export default function Home(){return <main className="home-page">
   <header className="site-header"><div className="shell header-inner"><a className="brand brand-header" href="#inicio"><img src="/vital-lettering.png" alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></a><StandardCTA>Cotar agora</StandardCTA></div></header>
   <section className="home-hero" id="inicio">
-    <img className="home-hero-bg" src="/home-hero-v1.png" alt="Felipe Vital com soluções para veículos, imóveis, máquinas e transportes"/><div className="home-hero-shade"/>
+    <picture className="home-hero-media"><source media="(max-width: 640px)" srcSet="/home-hero-v1-mobile.png"/><img className="home-hero-bg" src="/home-hero-v1.png" alt="Felipe Vital com soluções para veículos, imóveis, máquinas e transportes"/></picture><div className="home-hero-shade"/>
     <div className="home-shell home-hero-content"><span className="home-kicker">Seguros, consórcios e planos de saúde</span><h1>Proteção para tudo o que é <em>Vital.</em></h1><p>Cuidamos de pessoas, famílias e empresas com soluções bem escolhidas, atendimento próximo e proteção do tamanho certo.</p><div className="home-hero-actions"><WhatsAppLink className="home-primary" href={whatsapp} target="_blank" rel="noreferrer"><WhatsIcon/>Falar com um especialista</WhatsAppLink><a className="home-secondary" href="#produtos">Conhecer o portfólio <span>↓</span></a></div></div>
   </section>
   <section className="home-products" id="produtos"><div className="home-shell">
