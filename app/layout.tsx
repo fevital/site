@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import "./blog.css";
+import "./home.css";
 
 const title = "Seguro Auto | Vital Corretora";
 const description = "Compare seguradoras, coberturas, franquias e assistência para proteger seu carro com a Vital Corretora.";
