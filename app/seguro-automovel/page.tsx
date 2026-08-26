@@ -1,5 +1,8 @@
 import WhatsAppLink from "../components/WhatsAppLink";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const basePath = "/seguro-automovel";
 const asset = (path: string) => path;
 const whatsapp = "https://wa.me/553584149766?text=Oi%2C%20quero%20cotar%20um%20seguro%20para%20o%20meu%20autom%C3%B3vel%21";
