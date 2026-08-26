@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import BlogCTA from "../../../components/BlogCTA";
 import WhatsAppLink from "../../../components/WhatsAppLink";
 import { articleSections, articles, getArticle, relatedArticles } from "../../../lib/articles";
-import { canonicalBase, companyName, susep, whatsappUrl } from "../../../lib/site";
+import { basePath, canonicalBase, companyName, susep, whatsappUrl } from "../../../lib/site";
 
 type Params = Promise<{ slug: string }>;
 
@@ -59,8 +59,9 @@ export default async function ArticlePage({ params }: { params: Params }) {
   return (
     <main className="blog-site">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <header className="blog-header"><div className="blog-shell blog-nav"><Link href={`${basePath}/`}>Vital Corretora</Link><Link href={`${basePath}/blog/`}>Blog Seguro Auto</Link></div></header>
       <article className="blog-shell article-page">
-        <nav className="breadcrumbs"><Link href="/seguro-automovel/">Seguro Auto</Link><span>›</span><Link href="/seguro-automovel/blog/">Blog</Link><span>›</span><span>{article.category}</span></nav>
+        <nav className="breadcrumbs"><Link href={`${basePath}/`}>Seguro Auto</Link><span>›</span><Link href={`${basePath}/blog/`}>Blog</Link><span>›</span><span>{article.category}</span></nav>
         <header className="article-heading">
           <span>{article.category}{article.city ? ` · ${article.city}` : ""}</span>
           <h1>{article.title}</h1>
@@ -85,10 +86,11 @@ export default async function ArticlePage({ params }: { params: Params }) {
         </div>
         <section className="related-posts">
           <h2>Continue aprendendo</h2>
-          <div>{related.map((item) => <Link key={item.slug} href={`/seguro-automovel/blog/${item.slug}/`}>{item.title}<span>Leia agora →</span></Link>)}</div>
+          <div>{related.map((item) => <Link key={item.slug} href={`${basePath}/blog/${item.slug}/`}>{item.title}<span>Leia agora →</span></Link>)}</div>
         </section>
       </article>
       <WhatsAppLink className="blog-floating" href={whatsappUrl(`Olá! Li a matéria “${article.title}” e quero cotar meu seguro auto.`)} target="_blank" rel="noreferrer" aria-label="Cotar seguro auto pelo WhatsApp">WhatsApp</WhatsAppLink>
+      <footer className="blog-footer"><div className="blog-shell">{companyName} · SUSEP {susep} · Monsenhor Paulo, MG</div></footer>
     </main>
   );
 }

@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
-import Image from "next/image";
 import WhatsAppLink from "../components/WhatsAppLink";
 
+const basePath = "/seguro-automovel";
 const asset = (path: string) => path;
 const whatsapp = "https://wa.me/553584149766?text=Oi%2C%20quero%20cotar%20um%20seguro%20para%20o%20meu%20autom%C3%B3vel%21";
 
@@ -62,10 +61,16 @@ function CTA({children="Fazer minha cotação",light=false}:{children?:React.Rea
   return <WhatsAppLink className={light?"cta light":"cta"} href={whatsapp} target="_blank" rel="noreferrer"><WhatsIcon/>{children}</WhatsAppLink>;
 }
 
-export const metadata: Metadata = {title:"Seguro Auto em Minas Gerais",description:"Compare seguro automóvel em Varginha, Campanha, Três Corações, Pouso Alegre e outras regiões de Minas Gerais com a Vital Corretora.",alternates:{canonical:"https://vital.net.br/seguro-automovel/"}};
-
 export default function Home(){
   return <main>
+    <header className="site-header"><div className="shell header-inner">
+      <a className="brand brand-header" href="#inicio">
+        <img src={asset("/vital-lettering.png")} alt="Vital"/>
+        <span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span>
+      </a>
+      <CTA>Cotar agora</CTA>
+    </div></header>
+
     <section className="hero" id="inicio">
       <picture className="hero-media">
         <source media="(max-width: 640px)" srcSet={`${asset("/hero-vital-frota-mobile-v33.png")}?v=33`}/>
@@ -89,7 +94,7 @@ export default function Home(){
     </section>
 
     <section className="manifest" id="como-funciona">
-      <Image className="manifest-watermark" src={asset("/vital-shield.png")} alt="" aria-hidden="true" width={512} height={512}/>
+      <img className="manifest-watermark" src={asset("/vital-shield.png")} alt="" aria-hidden="true"/>
       <div className="shell manifest-content">
         <div className="manifest-heading">
           <span>Seguro pensado para você</span>
@@ -125,7 +130,7 @@ export default function Home(){
       <CTA>Quero comparar opções</CTA>
     </div></section>
 
-    <section className="insurers" id="seguradoras"><Image className="insurers-shield" src={asset("/vital-shield.png")} alt="" aria-hidden="true" width={512} height={512}/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, franquia, assistência, rede de atendimento e coberturas para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map(([name,src])=><div className="insurer-logo" key={`${group}-${name}`}><Image src={src} alt={group===0?name:""} width={220} height={90}/></div>)}</div>)}</div></div></section>
+    <section className="insurers" id="seguradoras"><img className="insurers-shield" src={asset("/vital-shield.png")} alt="" aria-hidden="true"/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, franquia, assistência, rede de atendimento e coberturas para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map(([name,src])=><div className="insurer-logo" key={`${group}-${name}`}><img src={src} alt={group===0?name:""}/></div>)}</div>)}</div></div></section>
 
     <section className="method" id="processo"><div className="shell">
       <div className="section-heading centered"><span>Simples do começo ao fim</span><h2>Seu seguro em apenas 3 passos.</h2></div>
@@ -162,6 +167,7 @@ export default function Home(){
     </div></section>
 
     <section className="final-cta"><div className="shell"><span>Todo cuidado é Vital.</span><h2>Proteja seu veículo sem pagar por aquilo que você não precisa.</h2><p>Compare as melhores condições para o seu perfil em uma cotação gratuita.</p><CTA light>Quero cotar meu seguro</CTA></div></section>
+    <footer><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/blog/`}>Blog Seguro Auto</a><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros · SUSEP 261180251</span><span>Monsenhor Paulo, MG • Atendimento no Sul de Minas</span></div></footer>
     <WhatsAppLink className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fazer cotação pelo WhatsApp"><WhatsIcon/></WhatsAppLink>
   </main>
 }
