@@ -10,3 +10,22 @@
 .home-hero-media{position:absolute;inset:0;display:block;background:#270000}.home-hero-bg{position:static;display:block;width:100%;height:100%;object-fit:contain;object-position:right center}.home-product-image{height:auto;aspect-ratio:1.515}.home-product-image img{object-position:center}.home-product-card:hover img{transform:scale(1.035)}
 @media(max-width:1050px) and (min-width:641px){.home-hero-bg{object-position:right center}}
 @media(max-width:640px){.home-hero{height:940px;min-height:940px}.home-hero-media{inset:0}.home-hero-bg{width:100%;height:100%;object-fit:cover;object-position:center bottom}.home-hero-shade{background:linear-gradient(180deg,#270000fa 0%,#310000ef 37%,#3100008a 56%,transparent 77%)}.home-product-card{display:block;min-height:0}.home-product-image{width:100%;height:auto;min-height:0;aspect-ratio:1.515}.home-product-copy{min-height:165px}}
+
+/* Product cards behave as native, accessible accordions. */
+.home-product-card{text-decoration:none}
+.home-product-card summary{display:block;cursor:pointer;list-style:none}
+.home-product-card summary::-webkit-details-marker{display:none}
+.home-product-card summary:focus-visible{outline:2px solid #ff706b;outline-offset:-2px}
+.home-product-card:focus-within{border-color:#ff4a43;box-shadow:0 22px 48px #0005}
+.home-product-card:first-child .home-product-image img{object-position:center 58%}
+.home-product-copy{min-height:112px}
+.home-product-copy h3{margin-bottom:20px}
+.home-product-copy i{transition:transform .25s}
+.home-product-card[open] .home-product-copy i{transform:rotate(180deg)}
+.home-product-description{padding:0 25px 25px;border-top:1px solid #ff4a432e}
+.home-product-description p{color:#ffffffb5;font-size:13px;line-height:1.65;margin:20px 0}
+.home-product-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:48px;padding:10px 16px;background:#25d366;color:#fff;text-decoration:none;font-size:12px;font-weight:800;transition:.2s}
+.home-product-whatsapp:hover{background:#1ebc59}
+.home-product-whatsapp .whats-icon{width:20px;height:20px}
+.footer-main{grid-template-columns:1fr auto}
+@media(max-width:640px){.home-product-copy{min-height:105px;padding:20px}.home-product-description{padding:0 20px 20px}.home-product-description p{font-size:12px}.footer-main{grid-template-columns:1fr}.footer-main>.cta{grid-column:auto;width:100%}}
