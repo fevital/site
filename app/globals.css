@@ -123,6 +123,10 @@ footer{background:#171616;color:#fff}.footer-main{display:grid;grid-template-col
 /* Legal-only footer navigation until final policy pages are connected. */
 footer nav span{color:#fff;font-size:13px;font-weight:700;opacity:.82}
 .footer-main nav{display:flex;flex-wrap:wrap;gap:15px 28px}
+.auto-footer .footer-main{grid-template-columns:minmax(300px,1fr) minmax(360px,auto) auto}
+.auto-footer .footer-main>.cta{grid-column:auto;width:auto;justify-self:end;white-space:nowrap}
+@media(max-width:980px){.auto-footer .footer-main{grid-template-columns:1fr auto;gap:28px 40px}.auto-footer .footer-main nav{justify-content:flex-end}.auto-footer .footer-main>.cta{grid-column:2;justify-self:end}}
+@media(max-width:640px){.auto-footer .footer-main{grid-template-columns:1fr;gap:28px}.auto-footer .footer-main nav{justify-content:flex-start}.auto-footer .footer-main>.cta{grid-column:1;width:100%;justify-self:stretch}}
 
 /* Full-bleed benefit bar and paths compatible with the configured basePath. */
 .hero-media{bottom:76px;background:#190000}

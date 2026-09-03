@@ -67,7 +67,7 @@ function CTA({children="Fazer minha cotação",light=false}:{children?:React.Rea
 export default function Home(){
   return <main>
     <header className="site-header"><div className="shell header-inner">
-      <a className="brand brand-header" href="#inicio">
+      <a className="brand brand-header" href="/" aria-label="Voltar para a página inicial da Vital">
         <img src={asset("/vital-lettering.png")} alt="Vital"/>
         <span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span>
       </a>
@@ -170,7 +170,7 @@ export default function Home(){
     </div></section>
 
     <section className="final-cta"><div className="shell"><span>Todo cuidado é Vital.</span><h2>Proteja seu veículo sem pagar por aquilo que você não precisa.</h2><p>Compare as melhores condições para o seu perfil em uma cotação gratuita.</p><CTA light>Quero cotar meu seguro</CTA></div></section>
-    <footer><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/blog/`}>Blog Seguro Auto</a><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros · SUSEP 261180251</span><span>Monsenhor Paulo, MG • Atendimento no Sul de Minas</span></div></footer>
+    <footer className="auto-footer"><div className="shell footer-main"><div className="footer-brand"><img src={asset("/vital-shield.png")} alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><nav aria-label="Informações legais"><a href={`${basePath}/blog/`}>Blog Seguro Auto</a><a href={`${basePath}/politica-de-privacidade/`}>Política de Privacidade</a><a href={`${basePath}/termos-de-uso/`}>Termos de Uso</a></nav><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros · SUSEP 261180251</span><span>Monsenhor Paulo, MG • Atendimento no Sul de Minas</span></div></footer>
     <WhatsAppLink className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fazer cotação pelo WhatsApp"><WhatsIcon/></WhatsAppLink>
   </main>
 }
