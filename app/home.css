@@ -28,4 +28,5 @@
 .home-product-whatsapp:hover{background:#1ebc59}
 .home-product-whatsapp .whats-icon{width:20px;height:20px}
 .footer-main{grid-template-columns:1fr auto}
+.home-about-actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px}.home-blog-link{color:#bd1c18;font-size:14px;font-weight:800;text-decoration:none;border-bottom:1px solid #bd1c1845;padding:10px 0}
 @media(max-width:640px){.home-product-copy{min-height:105px;padding:20px}.home-product-description{padding:0 20px 20px}.home-product-description p{font-size:12px}.footer-main{grid-template-columns:1fr}.footer-main>.cta{grid-column:auto;width:100%}}
