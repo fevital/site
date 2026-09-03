@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import WhatsAppLink from "../components/WhatsAppLink";
+import "./vida.css";
+
+export const metadata: Metadata = {
+  title: "Seguro de Vida em Minas Gerais | Vital Corretora",
+  description: "Seguro de vida para proteger a renda, os planos e a tranquilidade de quem fica. Compare coberturas com atendimento da Vital Corretora.",
+  alternates: { canonical: "/seguro-de-vida/" },
+};
+
+const whatsapp = "https://wa.me/553584149766?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20cota%C3%A7%C3%A3o%20de%20Seguro%20de%20Vida%21";
+const insurerLogos = ["mapfre","suhai","yelum","porto","tokio-marine","azul-seguros","allianz","hdi","bradesco-seguros","itau-seguros"];
+const insurerNames = ["MAPFRE","Suhai","Yelum","Porto","Tokio Marine","Azul Seguros","Allianz","HDI","Bradesco Seguros","Itaú Seguros"];
+const faqs = [
+  ["Por que contratar com a Vital?","Porque entendemos seu perfil, comparamos as alternativas e continuamos ao seu lado depois da contratação."],
+  ["A Vital atende toda Minas Gerais?","Sim. Atendemos todo o estado de forma 100% online, com contato humano e suporte próximo."],
+  ["Como vocês encontram a melhor opção?","Analisamos preço, coberturas, capitais segurados, assistências e as condições de cada seguradora."],
+  ["A opção mais barata pode ser uma boa escolha?","Pode, desde que ofereça a proteção necessária. Nosso trabalho é equilibrar preço e cobertura sem excessos."],
+  ["A Vital acompanha depois da contratação?","Sim. Ajudamos em alterações, documentos, assistências e acompanhamento de sinistros."],
+];
+
+function WhatsIcon(){return <svg className="whats-icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3A13 13 0 0 0 4.8 22.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1.1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.6.3-.6c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.4-.3-.7-.4Z"/></svg>}
+function CTA({children}:{children:React.ReactNode}){return <WhatsAppLink className="cta" href={whatsapp} target="_blank" rel="noreferrer"><WhatsIcon/>{children}</WhatsAppLink>}
+function ProtectionIcon({type}:{type:number}){const paths=[<><path d="M4 20V10h5v10M10 20V5h5v15M16 20v-7h4v7"/><path d="M3 20h18"/></>,<><path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z"/><path d="M8 12h8M12 8v8"/></>,<><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h5M7 3v4m10-4v4"/></>,<><path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 6.6-7 11-7 11Z"/><path d="M8 13h2l1-3 2 6 1-3h2"/></>];return <svg viewBox="0 0 24 24" aria-hidden="true">{paths[type]}</svg>}
+
+export default function SeguroDeVida(){return <main className="life-page">
+  <header className="site-header"><div className="shell header-inner"><a className="brand brand-header" href="#inicio"><img src="/vital-lettering.png" alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></a><CTA>Cotar agora</CTA></div></header>
+
+  <section className="life-hero" id="inicio"><img className="life-hero-background" src="/home-products/vida.png" alt="Família protegida pelo Seguro de Vida Vital"/><div className="life-hero-overlay"/><div className="shell life-hero-inner"><div className="life-hero-copy"><span>Seguro de Vida • Vital Corretora</span><h1>Seguro de vida.<em>Segurança para quem fica.</em></h1><p>Proteção financeira para sua família seguir em frente.</p><div className="life-actions"><CTA>Fazer minha cotação</CTA><a href="#protecao">Entenda a proteção <b>↘</b></a></div></div></div><div className="life-proof"><div className="shell"><span><b>✓</b> Renda protegida</span><span><b>✓</b> Coberturas sob medida</span><span><b>✓</b> Suporte para a família</span></div></div></section>
+
+  <section className="life-protection" id="protecao"><img src="/vital-shield.png" alt="" aria-hidden="true"/><div className="shell"><header><span>Proteção que continua</span><h2>Você cuida hoje.<em>O seguro protege amanhã.</em></h2><p>Dinheiro para quem você ama manter a vida em movimento.</p></header><div className="life-benefits">
+    <details><summary><i><ProtectionIcon type={0}/></i><span><b>01</b><h3>Renda protegida</h3></span><em>⌄</em></summary><p>A indenização ajuda sua família a manter as despesas essenciais e reorganizar a vida financeira.</p></details>
+    <details><summary><i><ProtectionIcon type={1}/></i><span><b>02</b><h3>Futuro dos filhos</h3></span><em>⌄</em></summary><p>Recursos para preservar educação, projetos e planos que você construiu para os seus filhos.</p></details>
+    <details><summary><i><ProtectionIcon type={2}/></i><span><b>03</b><h3>Dívidas e compromissos</h3></span><em>⌄</em></summary><p>Ajuda a evitar que financiamentos, parcelas e outras obrigações pesem sobre quem fica.</p></details>
+    <details><summary><i><ProtectionIcon type={3}/></i><span><b>04</b><h3>Coberturas em vida</h3></span><em>⌄</em></summary><p>Pode proteger o segurado em casos de invalidez, doenças graves e outros eventos contratados.</p></details>
+  </div><CTA>Proteger quem eu amo</CTA></div></section>
+
+  <section className="insurers" id="seguradoras"><img className="insurers-shield" src="/vital-shield.png" alt="" aria-hidden="true"/><div className="shell insurer-heading"><div><span>Uma cotação. Várias possibilidades.</span><h2>As principais seguradoras competindo pela sua escolha.</h2></div><p>Comparamos preço, capitais segurados, coberturas e assistências para mostrar o que muda de verdade.</p></div><div className="logo-marquee" aria-label="Seguradoras parceiras"><div className="logo-strip">{[0,1].map(group=><div className="logo-set" key={group} aria-hidden={group===1}>{insurerLogos.map((slug,index)=><div className="insurer-logo" key={`${group}-${slug}`}><img src={`/insurers/${slug}.png`} alt={group===0?insurerNames[index]:""}/></div>)}</div>)}</div></div></section>
+
+  <section className="method" id="processo"><div className="shell"><div className="section-heading centered"><span>Simples do começo ao fim</span><h2>Seu seguro em apenas 3 passos.</h2></div><div className="steps"><article><b>01</b><h3>Conte o que precisa proteger</h3><p>Você envia os dados básicos e explica sua necessidade.</p></article><article><b>02</b><h3>A Vital faz o trabalho</h3><p>Comparamos propostas, coberturas, limites e condições.</p></article><article><b>03</b><h3>Você escolhe com clareza</h3><p>Explicamos as diferenças e você contrata a melhor opção.</p></article></div><div className="centered"><CTA>Começar minha cotação</CTA></div></div></section>
+
+  <section className="region" id="minas-gerais"><svg className="region-shield" viewBox="0 0 500 590" aria-hidden="true"><path d="M250 20C185 70 111 97 42 109v173c0 137 78 238 208 288 130-50 208-151 208-288V109C389 97 315 70 250 20Z"/></svg><div className="shell region-content"><div className="region-copy"><span>Vital em toda Minas Gerais</span><h2>Do Sul de Minas para todo o estado.</h2><p>Somos referência no Sul de Minas e atendemos todo o estado de forma 100% online, com a mesma proximidade, segurança e suporte humano de um atendimento presencial.</p><div className="region-assurance"><b>Sem distância no atendimento.</b><small>Cotação, contratação e suporte com acompanhamento de verdade, onde você estiver.</small></div><CTA>Falar com a Vital</CTA></div><div className="region-map" aria-label="Atendimento em todo o estado de Minas Gerais"><div className="mg-map-image" role="img" aria-label="Mapa de Minas Gerais"><div className="mg-silhouette"/><span className="pin pin-1"/><span className="pin pin-2"/><span className="pin pin-3"/><span className="pin pin-4"/><span className="pin pin-5"/><span className="pin pin-6"/></div><div className="map-caption"><strong>Minas Gerais inteira</strong><span>Atendimento humano, ágil e 100% online</span></div></div><div className="region-benefits"><article><b>01</b><i>◉</i><h3>Acompanhamento integral de sinistros</h3></article><article><b>02</b><i>↗</i><h3>Proteção ajustada à sua realidade</h3></article><article><b>03</b><i>◷</i><h3>Atendimento ágil, 7 dias por semana, 24 horas</h3></article><article><b>04</b><i>▤</i><h3>Suporte em alterações e documentos</h3></article></div></div></section>
+
+  <section className="faq" id="duvidas"><div className="shell faq-grid"><div><span>Antes, durante e depois</span><h2>Você protegido em toda a jornada.</h2><p>A Vital entende antes, orienta durante a escolha e continua ao seu lado depois da contratação.</p><CTA>Falar com um especialista</CTA></div><div className="questions">{faqs.map(([question,answer])=><details key={question}><summary>{question}<span>⌄</span></summary><p>{answer}</p></details>)}</div></div></section>
+
+  <section className="home-about"><div className="home-shell home-about-grid"><div><span>Todo cuidado é Vital</span><h2>Uma corretora presente antes, durante e depois.</h2></div><div><p>Entendemos sua realidade, comparamos as melhores alternativas e explicamos cada escolha com clareza. Depois da contratação, seguimos ao seu lado em alterações, assistências e sinistros.</p><CTA>Quero falar com a Vital</CTA></div></div></section>
+  <footer><div className="shell footer-main"><div className="footer-brand"><img src="/vital-shield.png" alt="Vital"/><span>Corretora de Seguros,<br/>Consórcios &amp; Planos de Saúde</span></div><CTA>Chamar no WhatsApp</CTA></div><div className="shell footer-bottom"><span>Vital Corretora de Seguros · SUSEP 261180251</span><span>Monsenhor Paulo, MG • Atendimento no Sul de Minas</span></div></footer>
+  <WhatsAppLink className="floating" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Cotar Seguro de Vida pelo WhatsApp"><WhatsIcon/></WhatsAppLink>
+</main>}
