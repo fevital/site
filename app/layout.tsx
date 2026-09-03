@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vital.net.br"),
   title: { default: title, template: "%s | Vital Corretora" },
   description,
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/icon.png", type: "image/png", sizes: "96x96" }],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   alternates: { canonical: "/seguro-automovel/" },
   openGraph: { title, description, type: "website", locale: "pt_BR", siteName: "Vital Corretora", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Seguro Auto Vital" }] },
   twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
